@@ -5,10 +5,37 @@ import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/products/ProductCard';
 import { products } from '@/lib/data';
 import { ProductRecommendations } from '@/components/products/ProductRecommendations';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { cn } from '@/lib/utils';
 
 export default function Home() {
   const featuredProducts = products.slice(0, 6);
+
+  const testimonials = [
+    {
+      name: "Priya Sharma",
+      image: "https://placehold.co/100x100.png",
+      dataAiHint: "woman smiling",
+      rating: 5,
+      review: "The Elegant Rose Print is absolutely stunning! The quality is amazing, and it adds such a graceful touch to my living room. I'm so happy with my purchase."
+    },
+    {
+      name: "Rohan Mehta",
+      image: "https://placehold.co/100x100.png",
+      dataAiHint: "man portrait",
+      rating: 5,
+      review: "I bought the Cherry Blossom print, and it's so peaceful and beautiful. The colors are even more vibrant in person. The shipping was fast and the print was well-packaged."
+    },
+    {
+      name: "Ananya Reddy",
+      image: "https://placehold.co/100x100.png",
+      dataAiHint: "woman happy",
+      rating: 4,
+      review: "I love the unique designs from The Mystical Prints. The Abstract Floral Medley is a true statement piece in my office. I'll definitely be buying more!"
+    }
+  ];
 
   return (
     <div className="flex flex-col">
@@ -45,6 +72,35 @@ export default function Home() {
             <Button asChild variant="outline">
               <Link href="/products">View All Products</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-secondary/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12 animate-fade-in">
+            What Our Customers Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, i) => (
+              <Card key={i} className="bg-background shadow-lg rounded-lg overflow-hidden animate-fade-in-up" style={{ animationDelay: `${i * 150}ms` }}>
+                <CardHeader className="flex flex-col items-center text-center p-6">
+                  <Avatar className="w-24 h-24 mb-4 border-4 border-primary/20">
+                    <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.dataAiHint} />
+                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <CardTitle className="font-headline text-xl">{testimonial.name}</CardTitle>
+                   <div className="flex items-center gap-1 mt-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className={cn("w-5 h-5", i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300')} />
+                    ))}
+                  </div>
+                </CardHeader>
+                <CardContent className="p-6 pt-0 text-center">
+                  <p className="text-muted-foreground italic">"{testimonial.review}"</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
