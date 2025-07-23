@@ -37,23 +37,23 @@ export function ProductCard({ product }: ProductCardProps) {
   const isWishlisted = isInWishlist(product.id);
 
   return (
-    <Card className="w-full overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <Card className="w-full overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
       <Link href={`/products/${product.id}`} className="block">
         <CardContent className="p-0">
-          <div className="relative">
+          <div className="relative overflow-hidden">
             <Image
               src={product.image}
               alt={product.name}
               width={600}
               height={600}
-              className="object-cover w-full aspect-square"
+              className="object-cover w-full aspect-square transition-transform duration-500 group-hover:scale-110"
               data-ai-hint={product.dataAiHint}
             />
-            <div className="absolute top-2 right-2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="absolute top-2 right-2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Button
                     size="icon"
                     variant="default"
-                    className={cn("rounded-full bg-background/80 hover:bg-background text-foreground shadow-lg", isWishlisted && "bg-accent text-accent-foreground")}
+                    className={cn("rounded-full bg-background/80 hover:bg-background text-foreground shadow-lg transform-gpu transition-transform duration-200 hover:scale-110", isWishlisted && "bg-primary text-primary-foreground")}
                     onClick={handleWishlistClick}
                     aria-label={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
                 >
@@ -62,7 +62,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 <Button
                     size="icon"
                     variant="default"
-                    className="rounded-full bg-background/80 hover:bg-background text-foreground shadow-lg"
+                    className="rounded-full bg-background/80 hover:bg-background text-foreground shadow-lg transform-gpu transition-transform duration-200 hover:scale-110"
                     onClick={handleAddToCartClick}
                     aria-label="Add to cart"
                 >
@@ -70,7 +70,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 </Button>
             </div>
           </div>
-          <div className="p-4">
+          <div className="p-4 bg-background">
             <p className="text-sm text-muted-foreground">{product.category}</p>
             <h3 className="font-semibold text-lg truncate mt-1">{product.name}</h3>
             <p className="font-bold text-xl text-primary mt-2">${product.price.toFixed(2)}</p>
