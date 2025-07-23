@@ -25,7 +25,7 @@ export default function AboutPage() {
           </div>
           <div className="order-1 md:order-2">
             <Image
-              src="https://i.ibb.co/Vvz1DN7/logo.png"
+              src="https://placehold.co/600x400.png"
               alt="About Us Image"
               width={600}
               height={400}

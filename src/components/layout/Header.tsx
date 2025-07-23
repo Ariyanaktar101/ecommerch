@@ -1,7 +1,6 @@
 "use client";
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, ShoppingCart, Heart, User, Search } from 'lucide-react';
@@ -22,7 +21,6 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="https://i.ibb.co/Vvz1DN7/logo.png" alt="The Mystical Prints Logo" width={40} height={40} className="rounded-full" />
           <span className="text-xl font-bold font-headline text-primary">The Mystical Prints</span>
         </Link>
 
@@ -78,7 +76,6 @@ export function Header() {
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2 mb-4">
-                  <Image src="https://i.ibb.co/Vvz1DN7/logo.png" alt="The Mystical Prints Logo" width={40} height={40} className="rounded-full" />
                   <span className="text-xl font-bold font-headline text-primary">The Mystical Prints</span>
                 </Link>
                 <nav className="flex flex-col gap-4">

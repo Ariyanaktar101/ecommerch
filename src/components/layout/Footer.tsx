@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Twitter, Facebook, Instagram } from 'lucide-react';
@@ -11,7 +10,6 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="flex flex-col space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="https://i.ibb.co/Vvz1DN7/logo.png" alt="The Mystical Prints Logo" width={40} height={40} className="rounded-full" />
               <span className="text-xl font-bold font-headline text-primary">The Mystical Prints</span>
             </Link>
             <p className="text-sm text-muted-foreground">
