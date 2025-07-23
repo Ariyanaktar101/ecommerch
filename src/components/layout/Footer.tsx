@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Twitter, Facebook, Instagram } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -16,9 +16,7 @@ export function Footer() {
               Curated collections for a modern lifestyle.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" aria-label="Twitter"><Twitter className="h-5 w-5 hover:text-primary" /></Link>
-              <Link href="#" aria-label="Facebook"><Facebook className="h-5 w-5 hover:text-primary" /></Link>
-              <Link href="#" aria-label="Instagram"><Instagram className="h-5 w-5 hover:text-primary" /></Link>
+              <Link href="https://www.instagram.com/themysticalprints" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><Instagram className="h-5 w-5 hover:text-primary" /></Link>
             </div>
           </div>
           
