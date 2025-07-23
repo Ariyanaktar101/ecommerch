@@ -42,7 +42,7 @@ export default function Home() {
       <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white bg-gradient-to-br from-purple-200 via-pink-200 to-white overflow-hidden">
         <div className="absolute inset-0 bg-repeat bg-center opacity-10" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/flowers.png')" }}></div>
         <div className="absolute top-8 left-8 z-10">
-          <p className="text-3xl font-headline text-primary/80 drop-shadow-md">Welcome</p>
+          <p className="text-4xl font-display text-primary/80 drop-shadow-md">Welcome</p>
         </div>
         <div className="relative z-10 p-4 text-gray-800">
           <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-lg animate-fade-in-down text-primary">
