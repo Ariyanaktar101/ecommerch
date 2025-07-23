@@ -3,9 +3,10 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, ShoppingCart, Heart, User, Search } from 'lucide-react';
+import { Menu, ShoppingCart, Heart, User } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 import { useWishlist } from '@/hooks/useWishlist';
+import { cn } from '@/lib/utils';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -16,6 +17,8 @@ const navLinks = [
 export function Header() {
   const { itemCount } = useCart();
   const { wishlistCount } = useWishlist();
+
+  const iconButtonClasses = "rounded-full border w-8 h-8";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -68,30 +71,27 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 md:gap-4">
-          <Button variant="ghost" size="icon">
-            <Search className="h-5 w-5" />
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
+        <div className="flex items-center gap-2 md:gap-3">
+          <Button variant="ghost" size="icon" asChild className={iconButtonClasses}>
             <Link href="/login">
-              <User className="h-5 w-5" />
+              <User className="h-4 w-4" />
             </Link>
           </Button>
-          <Button variant="ghost" size="icon" asChild className="relative">
+          <Button variant="ghost" size="icon" asChild className={cn(iconButtonClasses, "relative")}>
             <Link href="/wishlist">
-              <Heart className="h-5 w-5" />
+              <Heart className="h-4 w-4" />
               {wishlistCount > 0 && (
-                <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-accent rounded-full">
+                <span className="absolute top-[-4px] right-[-4px] inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform bg-accent rounded-full">
                   {wishlistCount}
                 </span>
               )}
             </Link>
           </Button>
-          <Button variant="ghost" size="icon" asChild className="relative">
+          <Button variant="ghost" size="icon" asChild className={cn(iconButtonClasses, "relative")}>
             <Link href="/cart">
-              <ShoppingCart className="h-5 w-5" />
+              <ShoppingCart className="h-4 w-4" />
               {itemCount > 0 && (
-                <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-accent rounded-full">
+                <span className="absolute top-[-4px] right-[-4px] inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform bg-accent rounded-full">
                   {itemCount}
                 </span>
               )}
