@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/products/ProductCard';
 import { products } from '@/lib/data';
-import { ProductRecommendations } from '@/components/products/ProductRecommendations';
 import { ArrowRight, Star } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -12,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 export default function Home() {
-  const featuredProducts = products.slice(0, 6);
+  const featuredProducts = products.slice(0, 3).concat(products.find(p => p.id === 9)!);
 
   const testimonials = [
     {
@@ -95,7 +94,7 @@ export default function Home() {
                   <div className="p-1">
                     <Card className="bg-background shadow-lg rounded-lg overflow-hidden">
                        <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-                         <Avatar className="w-20 h-20 mb-4 border-4 border-primary/20">
+                         <Avatar className="w-16 h-16 mb-4 border-4 border-primary/20">
                           <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.dataAiHint} />
                           <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                         </Avatar>
@@ -104,21 +103,20 @@ export default function Home() {
                             <Star key={i} className={cn("w-5 h-5", i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300')} />
                           ))}
                         </div>
-                        <p className="text-muted-foreground italic mb-4 text-sm">"{testimonial.review}"</p>
-                        <CardTitle className="font-headline text-lg font-semibold">{testimonial.name}</CardTitle>
+                        <p className="text-muted-foreground italic mb-4 text-xs sm:text-sm">"{testimonial.review}"</p>
+                        <CardTitle className="font-headline text-base sm:text-lg font-semibold">{testimonial.name}</CardTitle>
                       </CardContent>
                     </Card>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="flex -left-4 sm:-left-8" />
+            <CarouselNext className="flex -right-4 sm:-right-8" />
           </Carousel>
         </div>
       </section>
       
-      <ProductRecommendations />
     </div>
   );
 }
