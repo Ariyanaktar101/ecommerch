@@ -97,4 +97,16 @@ export const products: Product[] = [
     reviews: 310,
     tags: ['vintage', 'botanical', 'set'],
   },
+  {
+    id: 9,
+    name: 'Personalized Bear Hug T-Shirt',
+    description: 'A charming and soft pink t-shirt featuring a cute teddy bear, elegantly framed by delicate flowers. Can be personalized with a name for a truly unique gift.',
+    price: 55.00,
+    image: 'https://i.ibb.co/3k5fCnc/image.png',
+    dataAiHint: 'teddy bear shirt',
+    category: 'Apparel',
+    rating: 4.9,
+    reviews: 180,
+    tags: ['t-shirt', 'personalized', 'kids'],
+  },
 ];
