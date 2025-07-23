@@ -1,4 +1,6 @@
 
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -9,6 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const featuredProducts = products.slice(0, 3).concat(products.find(p => p.id === 9)!);
@@ -37,12 +40,25 @@ export default function Home() {
     }
   ];
 
+  const quotes = [
+    "Experience nature’s beauty through stunning, soulful prints.",
+    "Nature-inspired prints that bring peace and harmony.",
+    "Turn your walls into windows to nature."
+  ];
+
+  const [quote, setQuote] = useState('');
+
+  useEffect(() => {
+    setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+  }, []);
+
   return (
     <div className="flex flex-col">
       <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white bg-gradient-to-br from-purple-200 via-pink-200 to-white overflow-hidden">
         <div className="absolute inset-0 bg-repeat bg-center opacity-10" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/flowers.png')" }}></div>
-        <div className="absolute top-8 left-8 z-10">
+        <div className="absolute top-8 left-8 z-10 text-gray-800 text-left">
           <p className="text-4xl font-display text-primary/80 drop-shadow-md">Welcome</p>
+          {quote && <p className="text-sm mt-2 ml-1 text-primary/70 drop-shadow-sm">{quote}</p>}
         </div>
         <div className="relative z-10 p-4 text-gray-800">
           <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-lg animate-fade-in-down text-primary">
