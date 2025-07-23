@@ -1,5 +1,7 @@
-# Firebase Studio
+# Lumina Commerce
 
-This is a NextJS starter in Firebase Studio.
+This is a modern e-commerce website built with Next.js and Firebase Studio.
 
-To get started, take a look at src/app/page.tsx.
+It features a product catalog, shopping cart, wishlists, and AI-powered product recommendations.
+
+To get started, run `npm run dev` and open your browser to `http://localhost:9002`.
