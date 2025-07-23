@@ -9,6 +9,7 @@ import { ArrowRight, Star } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 export default function Home() {
   const featuredProducts = products.slice(0, 6);
@@ -81,27 +82,39 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12 animate-fade-in">
             What Our Customers Say
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, i) => (
-              <Card key={i} className="bg-background shadow-lg rounded-lg overflow-hidden animate-fade-in-up" style={{ animationDelay: `${i * 150}ms` }}>
-                <CardHeader className="flex flex-col items-center text-center p-6">
-                  <Avatar className="w-20 h-20 mb-4 border-4 border-primary/20">
-                    <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.dataAiHint} />
-                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                  <CardTitle className="font-headline text-lg">{testimonial.name}</CardTitle>
-                   <div className="flex items-center gap-1 mt-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className={cn("w-5 h-5", i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300')} />
-                    ))}
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-xs sm:max-w-xl mx-auto"
+          >
+            <CarouselContent>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    <Card className="bg-background shadow-lg rounded-lg overflow-hidden">
+                       <CardContent className="flex flex-col items-center justify-center p-6 text-center">
+                         <Avatar className="w-20 h-20 mb-4 border-4 border-primary/20">
+                          <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.dataAiHint} />
+                          <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                        </Avatar>
+                        <div className="flex items-center gap-1 mb-2">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className={cn("w-5 h-5", i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300')} />
+                          ))}
+                        </div>
+                        <p className="text-muted-foreground italic mb-4 text-sm">"{testimonial.review}"</p>
+                        <CardTitle className="font-headline text-lg font-semibold">{testimonial.name}</CardTitle>
+                      </CardContent>
+                    </Card>
                   </div>
-                </CardHeader>
-                <CardContent className="p-6 pt-0 text-center">
-                  <p className="text-muted-foreground italic text-sm">"{testimonial.review}"</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex"/>
+          </Carousel>
         </div>
       </section>
       
