@@ -41,7 +41,7 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white bg-gradient-to-br from-purple-200 via-pink-200 to-white overflow-hidden">
         <div className="absolute inset-0 bg-repeat bg-center opacity-10" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/flowers.png')" }}></div>
-        <div className="absolute top-8 right-8 z-10">
+        <div className="absolute top-8 left-8 z-10">
           <p className="text-3xl font-headline text-primary/80 drop-shadow-md">Welcome</p>
         </div>
         <div className="relative z-10 p-4 text-gray-800">
@@ -64,7 +64,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12 animate-fade-in">
             Featured Prints
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {featuredProducts.map((product, i) => (
               <div key={product.id} className="animate-fade-in-up" style={{ animationDelay: `${i * 150}ms` }}>
                 <ProductCard product={product} />
