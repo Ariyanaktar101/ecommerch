@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="flex flex-col space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="The Mystical Prints Logo" width={40} height={40} className="rounded-full" />
+              <Image src="https://i.ibb.co/tBSv4mR/483904714-1676376253264740-2635773437629645846-n.jpg" alt="The Mystical Prints Logo" width={40} height={40} className="rounded-full" />
               <span className="text-xl font-bold font-headline">The Mystical Prints</span>
             </Link>
             <p className="text-sm text-muted-foreground">
