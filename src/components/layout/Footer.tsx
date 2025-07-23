@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Instagram } from 'lucide-react';
+import { Instagram, Facebook, Twitter } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -17,6 +17,8 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <Link href="https://www.instagram.com/themysticalprints" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><Instagram className="h-5 w-5 hover:text-primary" /></Link>
+              <Link href="https://www.facebook.com/themysticalprints" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><Facebook className="h-5 w-5 hover:text-primary" /></Link>
+              <Link href="https://www.twitter.com/themysticalprints" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><Twitter className="h-5 w-5 hover:text-primary" /></Link>
             </div>
           </div>
           
