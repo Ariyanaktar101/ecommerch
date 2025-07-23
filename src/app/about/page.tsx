@@ -25,7 +25,7 @@ export default function AboutPage() {
           </div>
           <div className="order-1 md:order-2">
             <Image
-              src="https://i.ibb.co/7z6ZkTp/The-Mystical-Prints.png"
+              src="https://i.ibb.co/Vvz1DN7/logo.png"
               alt="About Us Image"
               width={600}
               height={400}
