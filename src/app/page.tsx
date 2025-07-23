@@ -32,7 +32,7 @@ export default function Home() {
       name: "Ananya Reddy",
       image: "https://placehold.co/100x100.png",
       dataAiHint: "woman happy",
-      rating: 4,
+      rating: 5,
       review: "I love the unique designs from The Mystical Prints. The Abstract Floral Medley is a true statement piece in my office. I'll definitely be buying more!"
     }
   ];
@@ -85,11 +85,11 @@ export default function Home() {
             {testimonials.map((testimonial, i) => (
               <Card key={i} className="bg-background shadow-lg rounded-lg overflow-hidden animate-fade-in-up" style={{ animationDelay: `${i * 150}ms` }}>
                 <CardHeader className="flex flex-col items-center text-center p-6">
-                  <Avatar className="w-24 h-24 mb-4 border-4 border-primary/20">
+                  <Avatar className="w-20 h-20 mb-4 border-4 border-primary/20">
                     <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.dataAiHint} />
                     <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                   </Avatar>
-                  <CardTitle className="font-headline text-xl">{testimonial.name}</CardTitle>
+                  <CardTitle className="font-headline text-lg">{testimonial.name}</CardTitle>
                    <div className="flex items-center gap-1 mt-2">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className={cn("w-5 h-5", i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300')} />
@@ -97,7 +97,7 @@ export default function Home() {
                   </div>
                 </CardHeader>
                 <CardContent className="p-6 pt-0 text-center">
-                  <p className="text-muted-foreground italic">"{testimonial.review}"</p>
+                  <p className="text-muted-foreground italic text-sm">"{testimonial.review}"</p>
                 </CardContent>
               </Card>
             ))}
