@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, ShoppingCart, Heart, User, Search, Bot } from 'lucide-react';
+import { Menu, ShoppingCart, Heart, User, Search, Sparkles } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 import { useWishlist } from '@/hooks/useWishlist';
 
@@ -22,8 +22,8 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <Bot className="h-7 w-7 text-primary" />
-          <span className="text-xl font-bold font-headline">Lumina</span>
+          <Sparkles className="h-7 w-7 text-primary" />
+          <span className="text-xl font-bold font-headline">The Mystical Prints</span>
         </Link>
 
         <nav className="hidden md:flex gap-6">
@@ -78,8 +78,8 @@ export function Header() {
             <SheetContent side="right">
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2 mb-4">
-                  <Bot className="h-7 w-7 text-primary" />
-                  <span className="text-xl font-bold font-headline">Lumina</span>
+                  <Sparkles className="h-7 w-7 text-primary" />
+                  <span className="text-xl font-bold font-headline">The Mystical Prints</span>
                 </Link>
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (

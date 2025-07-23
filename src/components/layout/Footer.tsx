@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Bot, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Sparkles, Twitter, Facebook, Instagram } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -10,8 +10,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="flex flex-col space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <Bot className="h-7 w-7 text-primary" />
-              <span className="text-xl font-bold font-headline">Lumina</span>
+              <Sparkles className="h-7 w-7 text-primary" />
+              <span className="text-xl font-bold font-headline">The Mystical Prints</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Curated collections for a modern lifestyle.
@@ -54,7 +54,7 @@ export function Footer() {
         </div>
         
         <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Lumina Commerce. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} The Mystical Prints. All rights reserved.</p>
         </div>
       </div>
     </footer>
