@@ -14,11 +14,11 @@ export default function Home() {
       <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white bg-gray-800">
         <Image
           src="https://placehold.co/1800x800.png"
-          alt="Modern living room"
+          alt="Mystical abstract background"
           layout="fill"
           objectFit="cover"
           className="absolute z-0 opacity-40"
-          data-ai-hint="elegant living room"
+          data-ai-hint="mystical abstract pink purple"
         />
         <div className="relative z-10 p-4">
           <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 drop-shadow-lg">
