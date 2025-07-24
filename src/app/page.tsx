@@ -14,7 +14,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const featuredProducts = products.slice(0, 3).concat(products.find(p => p.id === 9)!);
+  const featuredProducts = products;
 
   const testimonials = [
     {
@@ -56,7 +56,7 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white bg-gradient-to-br from-purple-200 via-pink-200 to-white overflow-hidden">
         <div className="absolute inset-0 bg-repeat bg-center opacity-10" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/flowers.png')" }}></div>
-        <div className="absolute top-4 left-4 md:top-8 md:left-8 z-10 text-gray-800 text-left">
+        <div className="absolute top-8 left-8 z-10 text-gray-800 text-left">
           <p className="text-4xl font-display text-primary/80 drop-shadow-md">Welcome</p>
           {quote && <p className="text-sm mt-2 ml-1 text-primary/70 drop-shadow-sm">{quote}</p>}
         </div>
