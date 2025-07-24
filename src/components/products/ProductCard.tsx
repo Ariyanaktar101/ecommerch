@@ -73,7 +73,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <div className="p-4 bg-background">
             <p className="text-sm text-muted-foreground">{product.category}</p>
             <h3 className="font-semibold text-lg truncate mt-1">{product.name}</h3>
-            <p className="font-bold text-xl text-primary mt-2">${product.price.toFixed(2)}</p>
+            <p className="font-bold text-xl text-primary mt-2">₹{product.price.toFixed(2)}</p>
           </div>
         </CardContent>
       </Link>

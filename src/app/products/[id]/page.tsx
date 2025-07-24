@@ -57,7 +57,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             </div>
             <span className="text-muted-foreground text-sm">({product.reviews} reviews)</span>
           </div>
-          <p className="text-3xl font-bold text-primary mb-6">${product.price.toFixed(2)}</p>
+          <p className="text-3xl font-bold text-primary mb-6">₹{product.price.toFixed(2)}</p>
           <p className="text-muted-foreground leading-relaxed">{product.description}</p>
 
           <Separator className="my-8" />

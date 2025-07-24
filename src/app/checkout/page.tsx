@@ -120,7 +120,7 @@ export default function CheckoutPage() {
               </Card>
 
               <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90">
-                Pay ${cartTotal.toFixed(2)}
+                Pay ₹{cartTotal.toFixed(2)}
               </Button>
             </form>
           </Form>
@@ -143,7 +143,7 @@ export default function CheckoutPage() {
                             <p className="font-medium">{product.name}</p>
                             <p className="text-sm text-muted-foreground">Qty: {quantity}</p>
                           </div>
-                          <p className="font-medium">${(product.price * quantity).toFixed(2)}</p>
+                          <p className="font-medium">₹{(product.price * quantity).toFixed(2)}</p>
                         </div>
                       ))}
                     </div>
@@ -153,15 +153,15 @@ export default function CheckoutPage() {
               <div className="mt-4 pt-4 border-t space-y-2">
                 <div className="flex justify-between text-muted-foreground">
                   <span>Subtotal</span>
-                  <span>${cartTotal.toFixed(2)}</span>
+                  <span>₹{cartTotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-muted-foreground">
                   <span>Shipping</span>
-                  <span>$0.00</span>
+                  <span>₹0.00</span>
                 </div>
                 <div className="flex justify-between font-bold text-lg pt-2">
                   <span>Total</span>
-                  <span>${cartTotal.toFixed(2)}</span>
+                  <span>₹{cartTotal.toFixed(2)}</span>
                 </div>
               </div>
             </CardContent>
