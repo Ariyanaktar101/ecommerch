@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { products } from '@/lib/data';
@@ -13,7 +13,8 @@ import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
 
 export default function ProductDetailPage({ params }: { params: { id: string } }) {
-  const product = products.find((p) => p.id.toString() === params.id);
+  const { id } = params;
+  const product = useMemo(() => products.find((p) => p.id.toString() === id), [id]);
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
   const { addToWishlist, isInWishlist, removeFromWishlist } = useWishlist();
